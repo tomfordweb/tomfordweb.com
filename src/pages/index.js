@@ -7,16 +7,18 @@ import { MDXRenderer } from "gatsby-plugin-mdx";
 const IndexPage = ({ data }) => {
   return (
     <Layout>
-      <h1>Hello</h1>
-      {data.allMdx.nodes.map((node) => (
-        <section key={node.id}>
-          <h3>
-            <Link href={`/${node.slug}`}>{node.frontmatter.title}</Link>
-          </h3>
-          <p>{node.frontmatter.date}</p>
-          <MDXRenderer>{node.body}</MDXRenderer>
-        </section>
-      ))}
+      <section className="excerpts">
+        {data.allMdx.nodes.map((node) => (
+          <article key={node.id} className="blog-excerpt">
+            <h1>
+              <Link to={`/${node.slug}`}>{node.frontmatter.title}</Link>
+            </h1>
+            <time dateTime={node.frontmatter.date}>
+              {node.frontmatter.date}
+            </time>
+          </article>
+        ))}
+      </section>
     </Layout>
   );
 };
