@@ -4,9 +4,16 @@ import { MDXRenderer } from "gatsby-plugin-mdx";
 import Layout from "../components/layout";
 
 const BlogPost = ({ data }) => {
+  console.log(data.mdx);
   return (
-    <Layout pageTitle={data.mdx.frontmatter.title}>
-      <p>{data.mdx.frontmatter.date}</p>
+    <Layout
+      pageClass="BlogPost container"
+      pageTitle={data.mdx.frontmatter.title}
+    >
+      <header class="mb-5">
+        <h1 class="text-italic">{data.mdx.frontmatter.title}</h1>
+        <time>{data.mdx.frontmatter.date}</time>
+      </header>
       <MDXRenderer>{data.mdx.body}</MDXRenderer>
     </Layout>
   );

@@ -1,15 +1,15 @@
 import * as React from "react";
 import Layout from "../components/layout";
 import { Link, graphql } from "gatsby";
-import { MDXRenderer } from "gatsby-plugin-mdx";
-
+import { defineCustomElements as deckDeckGoHighlightElement } from "@deckdeckgo/highlight-code/dist/loader";
+deckDeckGoHighlightElement();
 // markup
 const IndexPage = ({ data }) => {
   return (
-    <Layout>
-      <section className="excerpts">
+    <Layout pageClass="IndexPage container mb-5">
+      <section>
         {data.allMdx.nodes.map((node) => (
-          <article key={node.id} className="blog-excerpt">
+          <article key={node.id} className="mb-5">
             <h1>
               <Link to={`/${node.slug}`}>{node.frontmatter.title}</Link>
             </h1>

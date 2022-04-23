@@ -76,7 +76,7 @@ git push --tags
 
 If you visit your `CI / CD -> Pipelines` page in gitlab, you should see your new tag building!
 
-<img class="img-center" src="/assets/images/gitlab-ci/pipeline-success-on-pushing-docker-image-to-ci.png" alt="A successful pipeline after pushing a new tag to the gitlab repository"/>
+<img className="img-center" src="/pipeline-success-on-pushing-docker-image.png" alt="A successful pipeline after pushing a new tag to the gitlab repository"/>
 
 ## Pull your image from your container registry...anywhere!
 
@@ -90,7 +90,7 @@ docker login registry.gitlab.com
 
 You should now be able to pull your image from your Gitlab docker registry and run it locally, (...or on any machine with docker installed!). No git or build tools needed! There is a copy button next to the tag name that you can click to get the registry image name.
 
-<img class="img-center" src="/assets/images/gitlab-ci/pushing-your-projects-docker-image-to-your-gitlab-registry.png" alt="A list of recently receated docker images in the gitlab container registry" />
+<img className="img-center" src="/pushing-docker-image-to-gitlab-registry.png" alt="A list of recently receated docker images in the gitlab container registry" />
 
 ```bash
 docker pull registry.gitlab.com/tomfordweb/registry-hello-world:latest
