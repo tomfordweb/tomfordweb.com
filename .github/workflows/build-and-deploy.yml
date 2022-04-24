@@ -79,7 +79,7 @@ jobs:
         run: ssh ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_SERVER}} "docker pull tomfordweb/tomfordweb.com:latest"
 
       - name: Pull Latest image on server
-        run: ssh ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_SERVER}} "docker pull tomfordweb/tomfordwb.com:latest"
+        run: ssh ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_SERVER}} "docker pull tomfordweb/tomfordweb.com:latest"
 
       - name: Stop App if necessary
         run: ssh ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_SERVER}} "docker stop tomfordweb.com || true"
