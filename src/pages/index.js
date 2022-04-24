@@ -20,13 +20,15 @@ const IndexPage = ({ data }) => {
       </Helmet>
       <section>
         {data.allMdx.nodes.map((node) => (
-          <article key={node.id} className="mb-5">
-            <h1>
-              <Link to={`/${node.slug}`}>{node.frontmatter.title}</Link>
-            </h1>
-            <time dateTime={node.frontmatter.date}>
-              {node.frontmatter.date}
-            </time>
+          <article key={node.id} className="blog-excerpt">
+            <header>
+              <h1>
+                <Link to={`/${node.slug}`}>{node.frontmatter.title}</Link>
+              </h1>
+              <time dateTime={node.frontmatter.date}>
+                {node.frontmatter.date}
+              </time>
+            </header>
           </article>
         ))}
       </section>
