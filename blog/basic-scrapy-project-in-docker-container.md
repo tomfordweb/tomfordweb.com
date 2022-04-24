@@ -23,7 +23,7 @@ vim Dockerfile
 
 `scrapy` needs the full python docker image rather than an alpine image. We will then install scrapy and then copy the current directory contents into the image's `/app` folder. You may notice the repeated use of `--volume` arguments, those are called bind mounts which sync your local files with the docker container container.
 
-The entrypoint of the image is the `scrapy` cli. 
+The entrypoint of the image is the `scrapy` cli.
 
 ```dockerfile
 FROM python:latest
@@ -33,7 +33,7 @@ COPY . .
 ENTRYPOINT ["scrapy"]
 ```
 
-To build the image and generate the scrapy project, we must first set the volume to the location the scraper will be generated at, this will allow us to move the files up a directory. 
+To build the image and generate the scrapy project, we must first set the volume to the location the scraper will be generated at, this will allow us to move the files up a directory.
 
 ```bash
 docker build -t scraper .
@@ -116,7 +116,6 @@ docker run scraper crawl quotes
 ## Writing a basic scraper
 
 To scrape the quotes let's modify the quotes scraper as follows
-
 
 ```python
 # scraper/spiders/quotes.py

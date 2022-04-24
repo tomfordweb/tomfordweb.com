@@ -80,7 +80,7 @@ If you visit your `CI / CD -> Pipelines` page in gitlab, you should see your new
 
 ## Pull your image from your container registry...anywhere!
 
-In Gitlab, if you navigate to your container registry you should see two images created. 
+In Gitlab, if you navigate to your container registry you should see two images created.
 
 If you repository is private, you must authenticate with the Gitlab registry before pulling your image locally. This is perfectly normal, and I do this for several of my own projects, but working with a private repository is outside of the scope of this lesson.
 

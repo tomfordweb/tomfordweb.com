@@ -3,12 +3,11 @@ title: Use docker to generate SQL insert statements from a CSV file
 date: 2020-12-22
 ---
 
-Importing large amounts of data directly from a CSV into your database via SQL workbench or any other visual editor can be a tedious, and very time consuming task - especially if you are connecting via ssh. 
+Importing large amounts of data directly from a CSV into your database via SQL workbench or any other visual editor can be a tedious, and very time consuming task - especially if you are connecting via ssh.
 
 I have written a small docker image that will load the contents of your .csv and create an SQL dump. I have imported dumps from this into a postgresql database, but it should work on any SQL database.
 
 You can view the repository and the container registry on my gitlab account. Pull requests welcome! [tomfordweb/csv-dumper](https://github.com/tomfordweb/csv-dumper).
-
 
 Now, lets create a sample file to see how the container works.
 
