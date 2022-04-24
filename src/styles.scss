@@ -31,6 +31,14 @@ body {
   color: $textPrimary;
 }
 
+code {
+  border-radius: 5px;
+  font-family: var(--deckgo-highlight-code-font-family, monospace);
+  padding: 2px 5px;
+  background: var(--deckgo-highlight-code-carbon-background, #282a36);
+  color: var(--deckgo-highlight-code-token-selector, #50fa7b);
+}
+
 * {
   box-sizing: border-box;
 }
