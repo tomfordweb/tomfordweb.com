@@ -2,11 +2,22 @@ import * as React from "react";
 import Layout from "../components/layout";
 import { Link, graphql } from "gatsby";
 import { defineCustomElements as deckDeckGoHighlightElement } from "@deckdeckgo/highlight-code/dist/loader";
-deckDeckGoHighlightElement();
+import { Helmet } from "react-helmet";
+
 // markup
+deckDeckGoHighlightElement();
+
 const IndexPage = ({ data }) => {
   return (
     <Layout pageClass="IndexPage container mb-5">
+      <Helmet>
+        <title>Fullstack Web Developer - tomfordweb.com</title>
+        <meta
+          name="description"
+          content="This is the technical blog of Tom Ford, a Web Developer based out of
+          Kalamazoo, Michigan."
+        />
+      </Helmet>
       <section>
         {data.allMdx.nodes.map((node) => (
           <article key={node.id} className="mb-5">
