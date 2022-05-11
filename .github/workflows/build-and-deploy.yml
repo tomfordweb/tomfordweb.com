@@ -84,5 +84,8 @@ jobs:
       - name: Stop App if necessary
         run: ssh ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_SERVER}} "docker stop tomfordweb.com || true"
 
+      - name: rm app
+        run: ssh ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_SERVER}} "docker rm tomfordweb.com || true"
+
       - name: Run the updated app
-        run: ssh ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_SERVER}} "docker run --rm -d -p 9000:9000 --name tomfordweb.com tomfordweb/tomfordweb.com:latest"
+        run: ssh ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_SERVER}} "docker run --restart unless-stopped -d -p 9000:9000 --name tomfordweb.com tomfordweb/tomfordweb.com:latest"
