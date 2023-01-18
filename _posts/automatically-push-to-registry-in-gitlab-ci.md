@@ -2,10 +2,7 @@
 title: Automatically push to your container registry with Gitlab CI on tag push
 excerpt: ''
 coverImage: '/assets/blog/hello-world/cover.jpg'
-date: '2020-03-16T05:35:07.322Z'
-author:
-  name: Tim Neutkens
-  picture: '/assets/blog/authors/tim.jpeg'
+date: '2020-12-16'
 ogImage:
   url: '/assets/blog/hello-world/cover.jpg'
 ---

@@ -23,6 +23,8 @@ export default function Post({ post, morePosts, preview }: Props) {
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />
   }
+
+
   return (
     <Layout preview={preview}>
       <Container>
