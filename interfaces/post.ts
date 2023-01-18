@@ -4,8 +4,7 @@ type PostType = {
   slug: string
   title: string
   date: string
-  coverImage: string
-  author: Author
+  coverImage?: string
   excerpt: string
   ogImage: {
     url: string
