@@ -1,0 +1,39 @@
+{
+  "name": "tomfordweb.com",
+  "version": "1.0.0",
+  "private": true,
+  "description": "tomfordweb.com",
+  "author": "Tom Ford",
+  "keywords": [
+    "gatsby"
+  ],
+  "scripts": {
+    "docker": "docker build -t tomfordweb . && docker run -it -p 9000:9000 tomfordweb",
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean"
+  },
+  "dependencies": {
+    "@deckdeckgo/highlight-code": "^3.6.0",
+    "@fontsource/libre-baskerville": "^4.5.5",
+    "@fontsource/open-sans": "^4.5.8",
+    "@mdx-js/mdx": "^1.6.22",
+    "@mdx-js/react": "^1.6.22",
+    "gatsby": "^4.12.1",
+    "gatsby-plugin-google-gtag": "^4.12.1",
+    "gatsby-plugin-manifest": "^4.12.1",
+    "gatsby-plugin-mdx": "^3.12.1",
+    "gatsby-plugin-react-helmet": "^5.12.1",
+    "gatsby-plugin-sass": "^5.12.1",
+    "gatsby-plugin-sitemap": "^5.12.1",
+    "gatsby-remark-highlight-code": "^3.2.0",
+    "gatsby-source-filesystem": "^4.12.1",
+    "gatsby-transformer-remark": "^5.12.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-helmet": "^6.1.0",
+    "sass": "^1.50.1"
+  }
+}
