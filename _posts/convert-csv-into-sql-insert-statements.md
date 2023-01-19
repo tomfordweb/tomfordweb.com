@@ -1,10 +1,10 @@
 ---
 title: Use docker to generate SQL insert statements from a CSV file
-excerpt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus.'
-coverImage: '/assets/blog/hello-world/cover.jpg'
-date: '2020-12-22'
+excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus."
+coverImage: "/assets/blog/tiger.jpg"
+date: "2020-12-22"
 ogImage:
-  url: '/assets/blog/hello-world/cover.jpg'
+  url: "/assets/blog/hello-world/cover.jpg"
 ---
 
 Importing large amounts of data directly from a CSV into your database via SQL workbench or any other visual editor can be a tedious, and very time consuming task - especially if you are connecting via ssh.

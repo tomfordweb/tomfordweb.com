@@ -1,10 +1,10 @@
 ---
 title: Manage your infrastructure with Ansible in github actions
-excerpt: ''
-coverImage: '/assets/blog/hello-world/cover.jpg'
-date: '2020-12-16'
+excerpt: ""
+coverImage: "/assets/blog/volcano.jpg"
+date: "2020-12-16"
 ogImage:
-  url: '/assets/blog/hello-world/cover.jpg'
+  url: "/assets/blog/volcano.jpg"
 ---
 
 Managing your assets with Ansible is a great way to easily configure and manage services upgrades. Things will break with any app eventually, and the true benefit is not having to remember how to configure a server weeks or years after you have finished the project.

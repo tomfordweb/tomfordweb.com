@@ -1,10 +1,10 @@
 ---
 title: Run Scrapy inside of a docker container.
-excerpt: ''
-coverImage: '/assets/blog/hello-world/cover.jpg'
-date: '2020-12-15'
+excerpt: ""
+coverImage: "/assets/blog/goldfish.jpg"
+date: "2020-12-15"
 ogImage:
-  url: '/assets/blog/hello-world/cover.jpg'
+  url: "/assets/blog/goldfish.jpg"
 ---
 
 [Scrapy](https://scrapy.org/) is a python library that allows you to scrape and interact with content on the web. However, until you get to the advanced usage it is meant to be run client side. Running scrapy inside of a docker container will allow you to run your spiders in the same environment across all instances and make it easy to import your scraped data into any project.
