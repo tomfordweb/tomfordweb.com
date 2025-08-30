@@ -3,6 +3,7 @@ import Layout from "../components/layout";
 import { Link, graphql } from "gatsby";
 import { Helmet } from "react-helmet";
 import AboutContent from "../components/about-content";
+import { Title } from "../components/title";
 
 
 const IndexPage = ({ data }) => {
@@ -15,10 +16,13 @@ const IndexPage = ({ data }) => {
         <section className="col-12 col-lg-9">
           {data.allMdx.nodes.map((node) => (
             <article key={node.id} className="blog-excerpt mb-5">
-              <header>
-                <h1 className="fira-code-bold">
+              <header
+                className="d-flex align-items-center justify-content-between"
+              >
+                <Title
+                  icon={node.frontmatter.icon}>
                   <Link to={`/${node.slug}`} className="text-decoration-none text-primary">{node.frontmatter.title}</Link>
-                </h1>
+                </Title>
               </header>
               <p className="mb-5">{node.excerpt}</p>
               <footer className="d-flex justify-content-between">
@@ -39,18 +43,19 @@ const IndexPage = ({ data }) => {
 };
 
 export const query = graphql`
-        query {
-          allMdx(sort: {fields: frontmatter___date, order: DESC }) {
-          nodes {
-          frontmatter {
+query {
+  allMdx(sort: {fields: frontmatter___date, order: DESC }) {
+      nodes {
+        frontmatter {
           date(formatString: "MMMM D, YYYY")
-        title
+          title
+          icon
         }
         slug
         id
         excerpt(pruneLength: 500)
-      }
     }
   }
+}
         `;
 export default IndexPage;

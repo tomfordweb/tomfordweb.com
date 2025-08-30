@@ -1,30 +1,26 @@
 import * as React from "react";
 import { Link } from "gatsby";
+import Layout from "../components/layout";
+import { Helmet } from "react-helmet";
+import { Title } from "../components/title";
 
 // markup
 const NotFoundPage = () => {
   return (
-    <main>
-      <title>Not found</title>
-      <h1>Page not found</h1>
+    <Layout>
+      <Helmet>
+        <title>Not found</title>
+      </Helmet>
+      <header className="d-flex justify-content-start align-items-center">
+        <Title icon="bi bi-exclamation-circle text-warning">Page not found</Title>
+      </header>
+      <hr />
       <p>
-        Sorry{" "}
-        <span role="img" aria-label="Pensive emoji">
-          😔
-        </span>{" "}
-        we couldn’t find what you were looking for.
-        <br />
-        {process.env.NODE_ENV === "development" ? (
-          <>
-            <br />
-            Try creating a page in <code>src/pages/</code>.
-            <br />
-          </>
-        ) : null}
-        <br />
-        <Link to="/">Go home</Link>.
+        Sorry, we couldn’t find what you were looking for.
       </p>
-    </main>
+
+      <Link className="btn btn-primary" to="/">Go home</Link>
+    </Layout>
   );
 };
 

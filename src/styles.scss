@@ -1,27 +1,41 @@
 @use "sass:map";
 
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap');
+$bootstrap-icons-font-dir: "bootstrap-icons/font/fonts";
+@import "bootstrap-icons/font/bootstrap-icons";
 
 // 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
-@import "../node_modules/bootstrap/scss/functions";
+@import "bootstrap/scss/functions";
 
 // 2. Include any default variable overrides here
+
+$primary: #d3869b !default;
+$secondary: #fe8019 !default;
+$success: #689d6a !default;
+$info: #458588 !default;
+$warning: #d79921 !default;
+$danger: #cc241d !default;
+$light: #a89984 !default;
+$dark: #3c3836 !default;
+
 // 3. Include remainder of required Bootstrap stylesheets (including any separate color mode stylesheets)
 @import "../node_modules/bootstrap/scss/variables";
 @import "../node_modules/bootstrap/scss/variables-dark";
 
 // 4. Include any default map overrides here
 $theme-colors: (
-  "primary": #d3869b,
-  "secondary": #fe8019,
-  "success": #689d6a,
-  "info": #458588,
-  "warning": #d79921,
-  "danger": #cc241d,
-  "light": #a89984,
-  "dark": #3c3836,
-  "yellow": #fabd2f
-);
+  "primary":    $primary,
+  "secondary":  $secondary,
+  "success":    $success,
+  "info":       $info,
+  "warning":    $warning,
+  "danger":     $danger,
+  "light":      $light,
+  "dark":       $dark,
+  "gruvbox-yellow": #fabd2f,
+  "gruvbox-orange": #fe8109
+) !default;
+
 
 
 // 5. Include remainder of required parts
