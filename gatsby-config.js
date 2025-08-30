@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `tomfordweb.com`,
-    siteUrl: `https://www.yourdomain.tld`,
+    siteUrl: `https://tomfordweb.com`,
   },
   plugins: [
     "gatsby-plugin-sass",

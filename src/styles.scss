@@ -1,246 +1,151 @@
-$themePrimary: #bada55;
-$themeSecondary: #bdbdbd;
-$textPrimary: #262525;
-$textSecondary: #474444;
-$linkColor: blue;
-$linkHoverColor: darken($linkColor, 20);
-$verticalGutter: 20px;
-$containerWidth: 1200px;
+@use "sass:map";
 
-:root {
-  --deckgo-highlight-code-carbon-margin: 0 0 40px 0;
-}
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap');
+$bootstrap-icons-font-dir: "bootstrap-icons/font/fonts";
+@import "bootstrap-icons/font/bootstrap-icons";
 
-/**
-* Typography / Layout
-*/
-main {
-  min-height: 100vh;
-}
+// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
+@import "bootstrap/scss/functions";
 
-%asPrimaryText {
-  color: $textPrimary !important;
-  &:hover {
-    color: darken($textPrimary, 20) !important;
-  }
-}
+// 2. Include any default variable overrides here
+
+$primary: #d3869b !default;
+$secondary: #fe8019 !default;
+$success: #689d6a !default;
+$info: #458588 !default;
+$warning: #d79921 !default;
+$danger: #cc241d !default;
+$light: #a89984 !default;
+$dark: #3c3836 !default;
+
+// 3. Include remainder of required Bootstrap stylesheets (including any separate color mode stylesheets)
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/variables-dark";
+
+// 4. Include any default map overrides here
+$theme-colors: (
+  "primary":    $primary,
+  "secondary":  $secondary,
+  "success":    $success,
+  "info":       $info,
+  "warning":    $warning,
+  "danger":     $danger,
+  "light":      $light,
+  "dark":       $dark,
+  "gruvbox-yellow": #fabd2f,
+  "gruvbox-orange": #fe8109
+) !default;
+
+
+
+// 5. Include remainder of required parts
+@import "../node_modules/bootstrap/scss/maps";
+@import "../node_modules/bootstrap/scss/mixins";
+@import "../node_modules/bootstrap/scss/root";
+
+// 6. Include any other optional stylesheet partials as desired; list below is not inclusive of all available stylesheets
+@import "../node_modules/bootstrap/scss/utilities";
+@import "../node_modules/bootstrap/scss/reboot";
+@import "../node_modules/bootstrap/scss/type";
+@import "../node_modules/bootstrap/scss/images";
+@import "../node_modules/bootstrap/scss/containers";
+@import "../node_modules/bootstrap/scss/grid";
+@import "../node_modules/bootstrap/scss/helpers";
+// ...
+
+// 7. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
+@import "../node_modules/bootstrap/scss/utilities/api";
+
+// 8. Add additional custom code here
+@import "bootstrap/scss/bootstrap";
+
+
 body {
-  font-family: "Open Sans";
-  font-size: 20px;
-  line-height: 1.5em;
-  color: $textPrimary;
+  font-family: "Fira Code", monospace;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.2em;
+}
+
+.fira-code-light {
+  font-family: "Fira Code", monospace;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+
+
+.fira-code-semibold {
+  font-family: "Fira Code", monospace;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.fira-code-bold {
+  font-family: "Fira Code", monospace;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.cursor:after {
+  content: "_";
+  opacity: 0;
+  animation: cursor 1s infinite;
+}
+
+@keyframes cursor {
+  0% {
+    opacity: 0;
+  }
+
+  40% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
 }
 
 code {
   border-radius: 5px;
   font-family: var(--deckgo-highlight-code-font-family, monospace);
-  padding: 2px 5px;
+  padding: 5px 10px;
   background: var(--deckgo-highlight-code-carbon-background, #282a36);
   color: var(--deckgo-highlight-code-token-selector, #50fa7b);
 }
 
-* {
-  box-sizing: border-box;
-}
 
-.mb-0 {
-  margin-bottom: 0 !important;
-}
-.mb-1 {
-  margin-bottom: 0.5rem;
-}
-.mb-2 {
-  margin-bottom: 1rem;
-}
-.text-italic {
-  font-style: italic;
-}
-
-p,
-li,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-.h1,
-.h2,
-.h3,
-.h4,
-.h5,
-.h6,
-.mb-3 {
-  margin-bottom: 1.5rem;
-}
-.mb-4 {
-  margin-bottom: 2rem;
-}
-
-.mb-5 {
-  margin-bottom: 3.5rem;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-.h1,
-.h2,
-.h3,
-.h4,
-.h5,
-.h6 {
-  font-weight: 700;
-  font-family: "Libre Baskerville";
-  margin-bottom: 2rem;
-}
-b,
-strong {
-  font-weight: 700;
-}
-
-.h1,
-h1 {
-  font-size: 2rem;
-  @media only screen and (min-width: 540px) {
-    font-size: 2.5rem;
-    line-height: 2.8rem;
-  }
-}
-
-.h2,
-h2 {
-  font-size: 2.2rem;
-  line-height: 1.2rem;
-}
-.h3,
-h3 {
-  font-size: 1.8rem;
-}
-
-.h4,
-h4 {
-  font-size: 1.6rem;
-}
-.h5,
-h5 {
-  font-size: 1.2rem;
-}
-.h6,
-a {
+a.badge {
   text-decoration: none;
-  color: $linkColor;
-  &:hover {
-    color: $linkHoverColor;
-  }
 }
 
-ul,
-ol {
-  margin-left: 40px;
-  li {
-    margin-bottom: 20px;
-  }
-}
 
-ul {
-  list-style-type: circle;
-}
-ol {
-  list-style-type: decimal;
-}
+#BlogPost {
 
-/**
-* Begin custom styles
-*/
-.container {
-  max-width: $containerWidth;
-
-  @media only screen and (min-width: $containerWidth) {
-    padding-left: 0;
-    padding-right: 0;
-  }
-  margin: 0 auto;
-  padding-top: $verticalGutter;
-  padding-left: $verticalGutter;
-  padding-right: $verticalGutter;
-  display: flex;
-  flex-direction: column;
-}
-
-#site-header {
-  background: $themePrimary;
-  margin-bottom: 40px;
-
-  > div {
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    flex-direction: row;
-    display: flex;
+  deckgo-highlight-code {
+    margin-bottom: map.get($spacers, 5)
   }
 
-  a {
-    @extend %asPrimaryText;
+  img {
+    max-width: 100%;
+    height: auto;
+    //automatic margin on the bottom of blog post images
+    margin-bottom: map.get($spacers, 5)
   }
-  #logo {
-    display: inline-block;
-    margin-right: auto;
-    text-transform: uppercase;
+
+  ul li {
+    margin-bottom: map.get($spacers, 2)
   }
-  ul {
-    margin: 0;
-    padding: 0;
-    margin-bottom: $verticalGutter;
-
-    > li {
-      display: inline;
-      text-transform: uppercase;
-      list-style-type: none;
-      margin-right: 20px;
-
-      &:last-child {
-        margin-right: 0;
-      }
-    }
-  }
-}
-#site-footer {
-  text-align: center;
-  padding: $verticalGutter 0;
-  background-color: $themeSecondary;
-}
-
-.IndexPage {
-  section {
-    display: flex;
-    align-items: flex-start;
-    flex-direction: column;
-
-    article {
-      padding: $verticalGutter;
-      width: 100%;
-
-      a {
-        @extend %asPrimaryText;
-      }
-    }
-  }
-}
-
-.blog-excerpt > header,
-.BlogPost > header {
-  width: 100%;
-  h1 {
-    font-style: italic;
-  }
-  time {
-    color: $textSecondary;
-  }
-  border-bottom: 1px solid #ddd;
-  margin-bottom: 3em;
-  padding-bottom: 3em;
 }

@@ -1,6 +1,7 @@
 ---
 title: Automatically push to your container registry with Gitlab CI on tag push
 date: 2020-12-16
+icon: "bi bi-gitlab text-gruvbox-orange"
 ---
 
 In this post I will describe how to host your docker builds in your own gitlab docker registry. In addition, whenever a tag is built for the repository, a new image will be generated and pushed to the repository.

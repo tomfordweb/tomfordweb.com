@@ -1,4 +1,3 @@
-import "./src/reset.scss";
 import "./src/styles.scss";
 
 import "@fontsource/open-sans/400.css";
