@@ -17,6 +17,7 @@ $warning: #d79921 !default;
 $danger: #cc241d !default;
 $light: #a89984 !default;
 $dark: #3c3836 !default;
+$black: #282828 !default;
 
 // 3. Include remainder of required Bootstrap stylesheets (including any separate color mode stylesheets)
 @import "../node_modules/bootstrap/scss/variables";
@@ -24,17 +25,16 @@ $dark: #3c3836 !default;
 
 // 4. Include any default map overrides here
 $theme-colors: (
-  "primary":    $primary,
-  "secondary":  $secondary,
-  "success":    $success,
-  "info":       $info,
-  "warning":    $warning,
-  "danger":     $danger,
-  "light":      $light,
-  "dark":       $dark,
+  "primary": $primary,
+  "secondary": $secondary,
+  "success": $success,
+  "info": $info,
+  "warning": $warning,
+  "danger": $danger,
+  "light": $light,
+  "dark": $dark,
   "gruvbox-yellow": #fabd2f,
-  "gruvbox-orange": #fe8109
-) !default;
+  "gruvbox-orange": #fe8109) !default;
 
 
 
@@ -61,7 +61,8 @@ $theme-colors: (
 
 
 body {
-  font-family: "Fira Code", monospace;
+  font-family: "Fira Code",
+    monospace;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
@@ -69,7 +70,8 @@ body {
 }
 
 .fira-code-light {
-  font-family: "Fira Code", monospace;
+  font-family: "Fira Code",
+    monospace;
   font-optical-sizing: auto;
   font-weight: 300;
   font-style: normal;
@@ -77,14 +79,16 @@ body {
 
 
 .fira-code-semibold {
-  font-family: "Fira Code", monospace;
+  font-family: "Fira Code",
+    monospace;
   font-optical-sizing: auto;
   font-weight: 600;
   font-style: normal;
 }
 
 .fira-code-bold {
-  font-family: "Fira Code", monospace;
+  font-family: "Fira Code",
+    monospace;
   font-optical-sizing: auto;
   font-weight: 700;
   font-style: normal;
@@ -120,10 +124,11 @@ body {
 
 code {
   border-radius: 5px;
-  font-family: var(--deckgo-highlight-code-font-family, monospace);
-  padding: 5px 10px;
-  background: var(--deckgo-highlight-code-carbon-background, #282a36);
-  color: var(--deckgo-highlight-code-token-selector, #50fa7b);
+  font-family: var(--deckgo-highlight-code-font-family, monospace
+  );
+padding: 5px 10px;
+background: var(--deckgo-highlight-code-carbon-background, #282a36);
+color: var(--deckgo-highlight-code-token-selector, #50fa7b);
 }
 
 
@@ -131,12 +136,17 @@ a.badge {
   text-decoration: none;
 }
 
+deckgo-highlight-code {
+  margin-bottom: map.get($spacers, 5);
+  display: block;
+  background: #1d2201 !important;
+  padding-top: map.get($spacers, 1);
+  padding-bottom: map.get($spacers, 1);
+
+}
 
 #BlogPost {
 
-  deckgo-highlight-code {
-    margin-bottom: map.get($spacers, 5)
-  }
 
   img {
     max-width: 100%;
